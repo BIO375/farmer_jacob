@@ -51,7 +51,7 @@ ggplot(data)+
 # Note that you must have the column name EXACTLY correct.  Try, for example,
 # the following code
 ggplot(data)+
-  geom_histogram(aes(right arm), binwidth = 10)
+  geom_histogram(aes(right_arm), binwidth = 10)
 
 # Look at the help file for geom_boxpolot
 help("geom_boxplot")
@@ -70,26 +70,36 @@ ggplot(data)+
 # IT IS IMPORTANT THAT YOU ASSIGN THE NAME data2
 # Dataset found at datasets/quinn/chpt2/lovett.csv
 # Enter your code below
-
+data2<-read_csv("datasets/quinn/chpt2/lovett.csv",col_names = TRUE,
+               col_types = cols(
+                 STREAM = col_character() ))
 
 
 # Calculate summary statistics for SO4 and SO4MOD
 # Enter your code below
 
-
+summary(data2)
 
 # Calculate standard deviation for SO4 and SO4MOD
 # Enter your code below
 
-
+summarize(data2, sd_SO4 = sd(SO4), sd_SO4MOD = sd(SO4MOD))
 
 # Plot histograms of SO4 and Modified SO4 with appropriate bin sizes
 # Enter your code below
+ggplot(data2)+
+  geom_histogram(aes(SO4), binwidth = 4)
+ggplot(data2)+
+  geom_histogram(aes(SO4MOD), binwidth = 2)
 
 
 
 # Plot boxplots of SO4 and Modified SO4 using the code below.  
 # You do not need to write any new code for this part!
+ggplot(data2)+
+  geom_boxplot(aes(x = "", y = SO4), notch = TRUE, varwidth = TRUE)
+ggplot(data2)+
+  geom_boxplot(aes(x = "", y = SO4MOD), notch = TRUE, varwidth = TRUE)
 
 # The code below modifies the dataset so it only contains SO4 and Modified SO4
 # using select{dplyr}, and is oriented in long form using gather{tidyr}
