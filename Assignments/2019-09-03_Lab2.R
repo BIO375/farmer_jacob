@@ -115,7 +115,7 @@ ggplot(data = data3)+
   coord_cartesian(ylim = c(40, 75))+
   stat_summary(aes(x = type, y = measurement), fun.y=mean, colour="darkred", geom="point", 
                shape=18, size=3)
-
+### CODE RUNS 10/10 PTS ####
 
 
 
