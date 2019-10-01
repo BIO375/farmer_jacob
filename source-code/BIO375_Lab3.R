@@ -97,14 +97,22 @@ ggplot(ward)+
 # Enter your code here
 
 
-
+library(readxl)
+sanchez_csv <- read_excel("~/Documents/Analyses /sanchez.csv.xlsx")
+View(sanchez_csv)
 
 
 # Calculate summary statistics
 # Enter your code here
 
 
-
+summ_beetle_density <- sanchez_csv %>%
+  group_by(`Bird Colony`) %>% 
+  summarise(mean_beetle_density = mean(`Beetle Density`),
+            median_beetle_density = median(`Beetle Density`),
+            IQR_beetle_density = IQR(`Beetle Density`),
+            sd_beetle_density = sd(`Beetle Density`),
+            var_beetle_density = var(`Beetle Density`))
 
 
 
@@ -112,14 +120,22 @@ ggplot(ward)+
 # Enter your code here
 
 
+library(readxl)
+sanchez_csv <- read_excel("~/Documents/Analyses /sanchez.csv.xlsx")
+View(sanchez_csv)
 
-
+sanchez_csv<-mutate(sanchez_csv, log(y+1)(beetle_density))
 
 # Generate histograms of beetle density by colony type before and after data 
 # transformation
 # Enter your code here
 
-
+ggplot(sanchez_csv)+
+  geom_histogram(aes(beetle_density), binwidth = 2)+
+  facet_wrap(~bird_colony)
+ggplot(sanchez_csv)+
+  geom_histogram(aes(log(y+1)), binwidth = 0.5)+
+  facet_wrap(~bird_colony)
 
 
 
@@ -127,3 +143,16 @@ ggplot(ward)+
 # transformation
 # Enter your code here
 
+ggplot(sanchez_csv)+
+  geom_boxplot(aes(x = Bird_Colony, y = Beetle_Density), notch = TRUE, varwidth = TRUE)
+ggplot(sanchez_csv)+
+  geom_histogram(aes(x = Bird_Colony, y = log(y=1)), notch = TRUE, varwidth = TRUE)
+
+names(sanchez_csv)
+dim(sanchez_csv)
+str(sanchez_csv)
+
+col_character(Bird_Colony)
+col_double(Beetle_Density)
+
+           
