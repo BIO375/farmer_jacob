@@ -70,7 +70,7 @@ compensation<-mutate(compensation, log(Root))
 # Enter your code here
 
 
-
+### MISSING CODE HERE ####
 
 
 
@@ -101,6 +101,7 @@ library(readxl)
 sanchez_csv <- read_excel("~/Documents/Analyses /sanchez.csv.xlsx")
 View(sanchez_csv)
 
+### CODE DOES NOT RUN, NO SUCH FILE IN THAT LOCATION ####
 
 # Calculate summary statistics
 # Enter your code here
@@ -125,6 +126,9 @@ sanchez_csv <- read_excel("~/Documents/Analyses /sanchez.csv.xlsx")
 View(sanchez_csv)
 
 sanchez_csv<-mutate(sanchez_csv, log(y+1)(beetle_density))
+
+### CODE ABOVE WILL NOT WORK####
+# Should be sanchez_csv<-mutate(sanchez_csv, log(beetle_density+1))
 
 # Generate histograms of beetle density by colony type before and after data 
 # transformation
@@ -155,4 +159,6 @@ str(sanchez_csv)
 col_character(Bird_Colony)
 col_double(Beetle_Density)
 
-           
+
+### CODE ABOVE WILL NOT WORK, INCONSISTENT COLUMN NAMES####
+### 5/10 ####
