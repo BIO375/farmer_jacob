@@ -22,9 +22,12 @@ head(obliquity_data)
 dim(obliquity_data)
 str(obliquity_data)
 summary(obliquity_data)
-summarise(obliquity_data)
-sample_mean <- 23.50
-sample_sd <- 0.019613001
+summ_obliquity <- obliquity_data %>%
+  summarise(mean_obliquity = mean(obliquity),
+            sd_obliquity = sd(obliquity),
+            n_obliquity = n())
+sample_mean <- 	23.49878
+sample_sd <- 0.019613
 sample_n <- 5
 df <- sample_n -1
 null_mean <- 0
@@ -49,3 +52,4 @@ ratio <-(max(summ_heart$sd_heart))/(min(summ_heart$sd_heart))
 t.test(Heart ~ ZONE, data = ward, var.equal = TRUE, alternative = "two.sided", conf.level = 0.95)
 
 #Question 3
+
