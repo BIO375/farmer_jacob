@@ -30,7 +30,7 @@ dim(salmon_data)
 str(salmon_data)
 
 ggplot(salmon_data) +
-  geom_histogram(aes(skinColor), binwidth = 10)+
+  geom_histogram(mapping = aes(skinColor), binwidth = .1)+
   facet_wrap(~species)
 
 ggplot(salmon_data) +
@@ -45,7 +45,7 @@ wilcox.test(skinColor ~ species, data = salmon_data, alternative = "two.sided", 
 
 #Question 25
 #Null Hypothesis: the median difference between the two groups is zero
-#Alternate Hypothesis: the median difference between the two groups is zero
+#Alternate Hypothesis: the median difference between the two groups is not zero
 cuts_data <- read_csv("datasets/abd/chapter13/chap13q25Clearcuts.csv")
 View(cuts_data)
 names(cuts_data)
