@@ -30,20 +30,21 @@ sample_mean <- 	23.49878
 sample_sd <- 0.019613
 sample_n <- 5
 df <- sample_n -1
-null_mean <- 0
+null_mean <- 23.4722
 t_sample <- (sample_mean - null_mean)/(sample_sd/sqrt(sample_n))
-negative_tail <- pt(t_sample, df)
-positive_tail <- 1 - negative_tail
+two_tailed <- 2*(1-pt(abs(t_sample), df))
 
 #Question 2
 library(readr)
-HeartAttack_short <- read_csv("datasets/demos/HeartAttack_short.csv")
+HeartAttack_short <- read_csv("datasets/demos/HeartAttack_short.csv",col_names = TRUE,
+               col_types = cols(
+                 group = col_character() ))
 names(HeartAttack_short)
 head(HeartAttack_short)
 dim(HeartAttack_short)
 str(HeartAttack_short)
 summary(HeartAttack_short)
-HeartAttack_short <- ward %>%
+summ_HA <-  %>%
   group_by(COLUMN) %>% 
   summarise(mean_heart = mean(HeartAttack_short),
             sd_heart = sd(HeartAttack_short),
