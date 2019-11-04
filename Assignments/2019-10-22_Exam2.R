@@ -66,3 +66,5 @@ data <- read_csv("treatment, growthrate
              high CO2, 1.89
              high CO2, 1.55
                  ")
+
+#### ALL THE CODE WORKS, MISSING HALF OF Q11.  5/6 ####
