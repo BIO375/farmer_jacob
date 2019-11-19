@@ -65,6 +65,23 @@ data <- read_csv("treatment, growthrate
              high CO2, 2.37
              high CO2, 1.89
              high CO2, 1.55
-                 ")
+             high CO2, 1.49
+             high CO2, 1.26
+             high CO2, 1.20
+             high CO2, 0.98")
+
+summ_data <- data %>%
+  group_by(treatment) %>% 
+  summarise(mean_data = mean(growthrate),
+            sd_data = sd(growthrate),
+            n_data = n())
+
+# Calculate the ratio between the standard deviations as a loose test of homoscedasticity
+ratio <-(max(summ_data$sd_data))/(min(summ_data$sd_data))
+
+t.test(growthrate ~ treatment, data = data, var.equal = TRUE, alternative = "two.sided", conf.level = 0.95)
+
+
+
 
 #### ALL THE CODE WORKS, MISSING HALF OF Q11.  5/6 ####
