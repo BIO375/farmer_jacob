@@ -78,4 +78,5 @@ ggplot(data = vision) +
 
 summary(model02)
 
+#### Code runs perfectly 5/5 ####
 
