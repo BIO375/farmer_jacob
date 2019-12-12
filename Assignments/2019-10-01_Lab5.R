@@ -54,3 +54,4 @@ t.test(Heart ~ ZONE, data = ward, var.equal = TRUE, alternative = "two.sided", c
 
 #Question 3
 
+### 7/10, Code breaks at line 48, COLUMN should be Group, Q3 incomplete ####
