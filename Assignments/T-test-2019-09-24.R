@@ -60,3 +60,5 @@ summ_lizards <- chap12e3HornedLizards %>%
             IQR_HL = IQR(squamosalHornLength),
             sd_HL = sd(squamosalHornLength),
             var_HL = var(squamosalHornLength))
+
+#### 9/10 Code breaks at line 57, COLUMN should be Survival ####

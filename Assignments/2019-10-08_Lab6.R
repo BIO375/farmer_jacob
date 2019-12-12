@@ -121,5 +121,7 @@ positive_tail <- 1 - negative_tail
 two_tailed <- 2*(1-pt(abs(t_sample), df))
 
 
-
-
+### Q20 should be a t-test on transformed data because Wilcoxan is not appropriate w/ unequal variance
+### Q26 should plot the data
+### Missing Q16 (maybe you did 15 by accident?)
+### 13/24 ####
