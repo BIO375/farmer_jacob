@@ -115,3 +115,4 @@ Jaffe <-read_csv("datasets/demos/Jaffe.csv", col_types = cols(
 tukey <- glht(Aldrin02, linfct = mcp(Depth = "Tukey"))
 
 summary(tukey)
+#### 10/10 code runs without breaking  (except for Tukey, but not required) ####

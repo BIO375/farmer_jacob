@@ -181,3 +181,7 @@ autoplot(model04)
 anova(model04)
 
 summary(model04)
+
+
+# Code breaks at 172-183 because you did not remove the row with an NA
+### 21/25 pts ####

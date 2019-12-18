@@ -83,3 +83,8 @@ rm(list = ls())
 library(readr)
 library(readr)
 davis <- read_csv("datasets/final/davis.csv")
+
+
+# Scenario 1 has x and y reversed
+# Scenario 2 breaks at line 61 and does not include planned comparisons
+### 7/10 pts ####

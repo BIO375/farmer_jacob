@@ -95,3 +95,4 @@ ggplot(data = fowler, aes(x = FERTILIZER, y = YIELD)) +
   theme_bw()+
   labs( x = "Fertilizer", y = "Yield")
 
+#### 10/10 code runs without breaking ####

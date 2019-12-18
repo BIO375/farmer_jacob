@@ -138,6 +138,7 @@ model05 <- chisq.test(tab02, correct = FALSE)
 model06 <- fisher.test(tab02, alternative = "two.sided")
 model06
 
+#### 0/10 code does not include questions from lab handout ####
 
 
 
